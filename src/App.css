@@ -6,10 +6,32 @@ html {
   background-size: cover;
 }
 
+.Text--Outline {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
 .Header {
   display: flex;
   font-size: 3rem;
   justify-content: center;
   align-items: center;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.Investigator {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  align-items: flex-start;
+  margin-left: 2rem;
+}
+
+.Investigator--Info {
+  display: flex;
+  flex-direction: column;
+}
+
+.Info--Span {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
 }
