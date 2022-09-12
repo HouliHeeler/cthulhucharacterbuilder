@@ -17,16 +17,22 @@ html {
   align-items: center;
 }
 
+.Profile {
+  display: flex;
+  justify-content: space-between;
+}
+
 .Investigator {
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
-  align-items: flex-start;
-  margin-left: 2rem;
+  width: 40vw;
+  align-items: center;
+  margin: 0 4rem;
 }
 
 .Investigator--Info {
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 
