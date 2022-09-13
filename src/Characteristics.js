@@ -1,41 +1,54 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Characteristics() {
+    let statsArray = [40, 50, 50, 50, 60, 60, 70, 80]
+
+    let [stat, setStat] = useState("Choose Wisely")
+
+    let handleStatChange = (e) => {
+        setStat(e.target.value)
+        }
+
+    const statsInput = <select onChange={handleStatChange}>
+    <option value="Choose Wisely">Choose Wisely</option>
+    {statsArray.map((stats, index) => <option key={index} value={stats}>{stats}</option>)}
+</select>
+
     return (
         <div className='Investigator'>
             <h2 className='Text--Outline'>Characteristics</h2>
             <div className='Investigator--Info'>
                 <div className='Info--Span'>
                     <span>Strength</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Dexterity</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Constitution</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Intelligence</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Appearance</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Size</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Education</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
                 <div className='Info--Span'>
                     <span>Power</span>
-                    <input size="10"></input>
+                    {statsInput}
                 </div>
             </div>
         </div>
