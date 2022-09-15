@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 export default function Characteristics() {
-    let statsArray = ["40", "50", "50", "50", "60", "60", "70", "80"]
+    let [statsArray, setStatsArray] = useState(["40", "50", "50", "50", "60", "60", "70", "80"])
 
     let [stat, setStat] = useState("Choose Wisely")
 
@@ -9,13 +9,12 @@ export default function Characteristics() {
         let valueIndex = statsArray.indexOf(e.target.value)
         setStat(e.target.value)
         if(e.target.value !== "Choose Wisely") {
-            statsArray.splice(valueIndex, 1)
-            alert(statsArray)
+            setStatsArray(prevStatsArray => [...prevStatsArray].splice(0, valueIndex).concat([...prevStatsArray].splice((valueIndex + 1), [...prevStatsArray].length - valueIndex)))
         }
-        }
+    }
 
     const statsInput =  <select onChange={handleStatChange}>
-                            <option value="Choose Wisely">Choose Wisely</option>
+                            <option value="Choose Wisely">{stat}</option>
                             {statsArray.map((stats, index) => <option key={index} value={stats}>{stats}</option>)}
                         </select>
 
