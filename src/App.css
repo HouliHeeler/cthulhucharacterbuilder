@@ -25,19 +25,34 @@ html {
 .Investigator {
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  align-items: center;
-  margin: 0 4rem;
+  width: 35vw;
+  align-items: flex-start;
+  margin: 0 2rem;
+}
+
+.Investigator--Characteristics {
+  width: 65vw;
+  margin: 0 2rem;
 }
 
 .Investigator--Info {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  max-height: 25vh;
+  width: 90%;
   flex-direction: column;
 }
 
 .Info--Span {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
   color: aliceblue;
+}
+
+.Category--Options {
+  color: black;
+  width: 45%;
+  margin-right: 5%;
 }

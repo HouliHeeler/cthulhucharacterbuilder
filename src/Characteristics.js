@@ -16,7 +16,7 @@ export default function Characteristics() {
     
 
     return (
-        <div className='Investigator'>
+        <div className='Investigator, Investigator--Characteristics'>
             <h2 className='Text--Outline'>Characteristics</h2>
             <div className='Investigator--Info'>
                 <Category name="Strength"  />
