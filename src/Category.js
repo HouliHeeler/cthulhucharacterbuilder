@@ -16,8 +16,8 @@ export default function Category(props) {
     return (
         <div className='Info--Span'>
             <span>{props.name}</span>
-            <Select options={options} 
-                    hideSelectedOptions={true}
+            <Select options={options}
+                    hideSelectedOption={true}
                     isClearable={true}
                     className="Category--Options"/>
         </div>

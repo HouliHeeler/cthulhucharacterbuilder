@@ -32,7 +32,6 @@ html {
 
 .Investigator--Characteristics {
   width: 65vw;
-  margin: 0 2rem;
 }
 
 .Investigator--Info {
@@ -47,12 +46,12 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2px;
   color: aliceblue;
 }
 
 .Category--Options {
   color: black;
-  width: 45%;
-  margin-right: 5%;
+  width: 55%;
+  margin: 0 2% 0 0;
+  max-height: 2.5rem;
 }
