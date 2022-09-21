@@ -12,7 +12,7 @@ function App() {
         <Investigator />
         <Characteristics />
       </div>
-      <div>
+      <div className="Prof--Skills">
         <Skills name="70"/>
         <Skills name="60"/>
         <Skills name="60"/>

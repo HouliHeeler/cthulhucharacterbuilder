@@ -9,6 +9,7 @@ import Droppable from './Droppable';
 
 export default function Skills(props) {
     const [parent, setParent] = useState(null);
+
     const draggable = (
       <Draggable id="draggable">
         {props.name}
