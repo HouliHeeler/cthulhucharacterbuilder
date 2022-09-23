@@ -2,7 +2,7 @@ import './App.css';
 import Characteristics from './Characteristics';
 import Header from './Header'
 import Investigator from './Investigator';
-import Example from './Example'
+import Container from './Container'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
@@ -16,7 +16,7 @@ function App() {
       </div>
       <div className="Prof--Skills">
 				<DndProvider backend={HTML5Backend}>
-					<Example />
+					<Container />
 				</DndProvider>
 			</div>
     </div>

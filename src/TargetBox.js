@@ -1,17 +1,10 @@
 import { memo, useCallback, useState } from 'react'
 import { useDrop } from 'react-dnd'
-import { Colors } from './Colors.js'
-const style = {
-  border: '1px solid gray',
-  height: '15rem',
-  width: '15rem',
-  padding: '2rem',
-  textAlign: 'center',
-}
-const TargetBox = memo(function TargetBox({ onDrop, lastDroppedColor }) {
-  const [{ isOver, draggingColor, canDrop }, drop] = useDrop(
+
+const TargetBox = memo(function TargetBox({ onDrop, lastDroppedStat }) {
+  const [{ isOver, canDrop }, drop] = useDrop(
     () => ({
-      accept: ["40", "50", "60", "70"],
+      accept: ["20", "40", "50", "60", "70"],
       drop(_item, monitor) {
         onDrop(monitor.getItemType())
         return undefined
@@ -25,37 +18,29 @@ const TargetBox = memo(function TargetBox({ onDrop, lastDroppedColor }) {
     [onDrop],
   )
   const opacity = isOver ? 1 : 0.7
-  let backgroundColor = '#fff'
-  switch (draggingColor) {
-    case Colors.BLUE:
-      backgroundColor = 'lightblue'
-      break
-    case Colors.YELLOW:
-      backgroundColor = 'lightgoldenrodyellow'
-      break
-    default:
-      break
-  }
+  
   return (
     <div
       ref={drop}
-      data-color={lastDroppedColor || 'none'}
-      style={{ ...style, backgroundColor, opacity }}
+      data-stat={lastDroppedStat || 'none'}
+      style={{ opacity }}
+      className="Target--Box"
     >
-      <p>Drop here.</p>
-
-      {!canDrop && lastDroppedColor && <p>Last dropped: {lastDroppedColor}</p>}
+      {!canDrop && lastDroppedStat && <span>{lastDroppedStat}</span>}
     </div>
   )
 })
 export const StatefulTargetBox = (props) => {
-  const [lastDroppedColor, setLastDroppedColor] = useState(null)
-  const handleDrop = useCallback((color) => setLastDroppedColor(color), [])
+  const [lastDroppedStat, setLastDroppedStat] = useState(props.default)
+  const handleDrop = useCallback((stat) => setLastDroppedStat(stat), [])
   return (
-    <TargetBox
+    <div className="Skill">
+      <span>{props.name}</span>
+      <TargetBox
       {...props}
-      lastDroppedColor={lastDroppedColor}
+      lastDroppedStat={lastDroppedStat}
       onDrop={handleDrop}
     />
+    </div>
   )
 }

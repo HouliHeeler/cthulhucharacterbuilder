@@ -56,18 +56,28 @@ html {
   max-height: 2.5rem;
 }
 
-.Prof--Skills {
+.Prof--Skills, .Pers--Skills {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 1rem;
+  border: 2px solid red;
 }
 
-.Stat--Source {
+.Stat--Source, .Target--Box {
   width: 4rem;
+  min-height: 1rem;
+  max-height: 1rem;
   border: aliceblue 2px solid;
   background-color: aliceblue;
   text-align: center;
   margin: 2px;
 }
 
-
+.Skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 12rem;
+  color: aliceblue;
+}
