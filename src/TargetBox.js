@@ -35,7 +35,7 @@ export const StatefulTargetBox = (props) => {
   const handleDrop = useCallback((stat) => setLastDroppedStat(stat), [])
   return (
     <div className="Skill">
-      <span>{props.name}</span>
+      <span style={{color: "aliceblue"}}>{props.name}</span>
       <TargetBox
       {...props}
       lastDroppedStat={lastDroppedStat}
