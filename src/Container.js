@@ -23,7 +23,7 @@ export const Container = memo(function Container() {
         <SourceBox name="20" type="persSkill" className="Stat--Source"/>
         <SourceBox name="20" type="persSkill" className="Stat--Source"/>
       </div>
-      <div>
+      <div className="Skills--Array">
         {skillsArray}
       </div>
     </div>
