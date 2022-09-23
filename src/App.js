@@ -2,7 +2,9 @@ import './App.css';
 import Characteristics from './Characteristics';
 import Header from './Header'
 import Investigator from './Investigator';
-import Skills from './Skills'
+import Example from './Example'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 function App() {
   return (
@@ -13,16 +15,10 @@ function App() {
         <Characteristics />
       </div>
       <div className="Prof--Skills">
-        <Skills name="70"/>
-        <Skills name="60"/>
-        <Skills name="60"/>
-        <Skills name="50"/>
-        <Skills name="50"/>
-        <Skills name="50"/>
-        <Skills name="40"/>
-        <Skills name="40"/>
-        <Skills name="40"/>
-      </div>
+				<DndProvider backend={HTML5Backend}>
+					<Example />
+				</DndProvider>
+			</div>
     </div>
   );
 }
