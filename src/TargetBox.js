@@ -11,7 +11,7 @@ const style = {
 const TargetBox = memo(function TargetBox({ onDrop, lastDroppedColor }) {
   const [{ isOver, draggingColor, canDrop }, drop] = useDrop(
     () => ({
-      accept: ["STAT"],
+      accept: ["40", "50", "60", "70"],
       drop(_item, monitor) {
         onDrop(monitor.getItemType())
         return undefined

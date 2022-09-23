@@ -1,15 +1,10 @@
 import { memo, useMemo } from 'react'
 import { useDrag } from 'react-dnd'
 
-const style = {
-  border: '1px dashed gray',
-  padding: '0.5rem',
-  margin: '0.5rem',
-}
 export const SourceBox = memo(function SourceBox(props) {
   const [{ isDragging }, drag] = useDrag(
     () => ({
-      type: "STAT",
+      type: props.name,
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
       }),
@@ -17,13 +12,12 @@ export const SourceBox = memo(function SourceBox(props) {
   )
   const containerStyle = useMemo(
     () => ({
-      ...style,
       opacity: isDragging ? 0.4 : 1,
     }),
     [isDragging],
   )
   return (
-    <div ref={drag} style={containerStyle} >
+    <div ref={drag} style={containerStyle} className="Stat--Source">
       <span>{props.name}</span>
     </div>
   )

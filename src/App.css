@@ -58,10 +58,16 @@ html {
 
 .Prof--Skills {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.Draggable {
+.Stat--Source {
   width: 4rem;
+  border: aliceblue 2px solid;
+  background-color: aliceblue;
+  text-align: center;
+  margin: 2px;
 }
 
 
