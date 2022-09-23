@@ -1,34 +1,21 @@
 import { memo } from 'react'
 import { SourceBox } from './SourceBox.js'
 import { StatefulTargetBox as TargetBox } from './TargetBox.js'
-import Constants from './Constants'
+import {skills, professionalSkills, personalSkills} from './Constants'
 export const Container = memo(function Container() {
+  const charSkills = skills.map(skill => <TargetBox className="Target--Box" name={skill.name} default={skill.score}/>)
+  const profSkills = professionalSkills.map(skill => <SourceBox name={skill} className="Stat--Source"/>)
+  const persSkills = personalSkills.map(skill => <SourceBox name={skill} className="Stat--Source"/>)
   return (
     <div>
       <div className="Prof--Skills">
-        <SourceBox name="40" className="Stat--Source"/>
-        <SourceBox name="40" className="Stat--Source"/>
-        <SourceBox name="40" className="Stat--Source"/>
-        <SourceBox name="50" className="Stat--Source"/>
-        <SourceBox name="50" className="Stat--Source"/>
-        <SourceBox name="50" className="Stat--Source"/>
-        <SourceBox name="60" className="Stat--Source"/>
-        <SourceBox name="60" className="Stat--Source"/>
-        <SourceBox name="70" className="Stat--Source"/>
+        {profSkills}
       </div>
       <div className="Pers--Skills">
-        <SourceBox name="20" className="Stat--Source"/>
-        <SourceBox name="20" className="Stat--Source"/>
-        <SourceBox name="20" className="Stat--Source"/>
-        <SourceBox name="20" className="Stat--Source"/>
+        {persSkills}
       </div>
       <div>
-        <TargetBox name="Accounting" default="01" className="Target--Box"/>
-        <TargetBox name="Anthropology" default="01" className="Target--Box"/>
-        <TargetBox className="Target--Box"/>
-        <TargetBox className="Target--Box"/>
-        <TargetBox className="Target--Box"/>
-        <TargetBox className="Target--Box"/>
+        {charSkills}
       </div>
     </div>
   )
