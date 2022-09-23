@@ -63,9 +63,11 @@ html {
   margin-top: 1rem;
 }
 
+.Pers--Skills {
+  justify-content: center;
+}
+
 .Stat--Source, .Target--Box {
-  display: flex;
-  justify-content: space-between;
   min-width: 4rem;
   min-height: 1rem;
   max-height: 1rem;
