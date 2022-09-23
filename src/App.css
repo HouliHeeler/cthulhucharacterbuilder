@@ -72,6 +72,7 @@ html {
   background-color: aliceblue;
   text-align: center;
   margin: 2px;
+  cursor: pointer;
 }
 
 .Skill {

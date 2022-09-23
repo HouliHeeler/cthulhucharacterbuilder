@@ -1,21 +1,30 @@
 import { memo } from 'react'
 import { SourceBox } from './SourceBox.js'
 import { StatefulTargetBox as TargetBox } from './TargetBox.js'
-import {skills, professionalSkills, personalSkills} from './Constants'
+import {skills} from './Constants'
 export const Container = memo(function Container() {
-  const charSkills = skills.map(skill => <TargetBox className="Target--Box" name={skill.name} default={skill.score}/>)
-  const profSkills = professionalSkills.map(skill => <SourceBox name={skill} className="Stat--Source"/>)
-  const persSkills = personalSkills.map(skill => <SourceBox name={skill} className="Stat--Source"/>)
+  const skillsArray = skills.map(skill => <TargetBox name={skill.name} default={skill.score} className="Target--Box"/>)
   return (
     <div>
       <div className="Prof--Skills">
-        {profSkills}
+        <SourceBox name="40" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="40" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="40" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="50" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="50" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="50" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="60" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="60" type="profSkill" className="Stat--Source"/>
+        <SourceBox name="70" type="profSkill" className="Stat--Source"/>
       </div>
       <div className="Pers--Skills">
-        {persSkills}
+        <SourceBox name="20" type="persSkill" className="Stat--Source"/>
+        <SourceBox name="20" type="persSkill" className="Stat--Source"/>
+        <SourceBox name="20" type="persSkill" className="Stat--Source"/>
+        <SourceBox name="20" type="persSkill" className="Stat--Source"/>
       </div>
       <div>
-        {charSkills}
+        {skillsArray}
       </div>
     </div>
   )
