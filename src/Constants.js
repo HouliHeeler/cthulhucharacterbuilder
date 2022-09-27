@@ -85,3 +85,5 @@ export const professionalSkills = [40,40,40,50,50,50,60,60,70]
 export const personalSkills = [20,20,20,20]
 
 export const weaponArray = ['Weapon', 'Success', 'Damage', 'Range', 'Attacks', 'Ammo', 'Malfunction']
+
+export const combatInfo = ['Damage Bonus', 'Build', 'Dodge']

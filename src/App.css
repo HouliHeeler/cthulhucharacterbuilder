@@ -8,6 +8,7 @@ html {
 
 .Text--Outline {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-align: center;
 }
 
 .Header {
@@ -95,6 +96,37 @@ html {
 
 .Weapons--Combat {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
+  margin: 0 3rem 1rem 3rem;
+}
+
+.Weapons--Table, .Combat--Table {
+  display: flex;
+  color: aliceblue;
+  text-align: center;
+}
+
+.Weapons--Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Weapons--Input {
+  width: 5rem;
+}
+
+.Combat--Table {
+  flex-direction: column;
+}
+
+.Combat--Row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Combat--Input {
+  width: 3rem;
+  margin-left: 2rem;
 }
