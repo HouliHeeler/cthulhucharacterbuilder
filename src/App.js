@@ -5,6 +5,8 @@ import Investigator from './Investigator';
 import Container from './Container'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import Weapons from './Weapons';
+import Combat from './Combat';
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
 					<Container />
 				</DndProvider>
 			</div>
+      <div className='Weapons--Combat'>
+        <Weapons />
+        <Combat />
+      </div>
     </div>
   );
 }

@@ -92,3 +92,9 @@ html {
   margin: 2rem 0;
   max-height: 25rem;
 }
+
+.Weapons--Combat {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
