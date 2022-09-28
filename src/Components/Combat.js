@@ -1,5 +1,5 @@
 import React from 'react'
-import { combatInfo } from './Constants'
+import { combatInfo } from '../Constants'
 
 export default function Combat() {
     const combatTable = combatInfo.map(item => (

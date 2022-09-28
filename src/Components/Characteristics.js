@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Category from './Category'
-import {options, statNames} from './Constants'
+import {options, statNames} from '../Constants'
 
 export default function Characteristics() {
     const [selectedOption, setSelectedOption] = useState(options[0]);

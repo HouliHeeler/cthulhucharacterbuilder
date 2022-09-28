@@ -6,6 +6,14 @@ html {
   background-size: cover;
 }
 
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  list-style: none;
+  color: aliceblue;
+}
+
 .Text--Outline {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   text-align: center;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { weaponArray } from './Constants'
+import { weaponArray } from '../Constants'
 
 export default function Weapons() {
     const column = weaponArray.map(item => (

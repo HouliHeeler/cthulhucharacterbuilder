@@ -1,16 +1,18 @@
 import './App.css';
-import Characteristics from './Characteristics';
-import Header from './Header'
-import Investigator from './Investigator';
-import Container from './Container'
+import Navbar from './Components/Navbar';
+import Characteristics from './Components/Characteristics';
+import Header from './Components/Header'
+import Investigator from './Components/Investigator';
+import Container from './Components/Container'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import Weapons from './Weapons';
-import Combat from './Combat';
+import Weapons from './Components/Weapons';
+import Combat from './Components/Combat';
 
 function App() {
   return (
     <div className="App">
+      <Navbar className="Navbar"/>
       <Header />
       <div className='Profile'>
         <Investigator />
