@@ -6,8 +6,8 @@ export default function Characteristics() {
     const [selectedOption, setSelectedOption] = useState(options[0]);
     const [statsArray, setStatsArray] = useState([...options])
     function handleChange(e) {
-        let temp = [...options].indexOf(e)
-        let newArray = [...options].slice(0, temp).concat([...options].slice(temp+1))
+        let temp = [...statsArray].indexOf(e)
+        let newArray = [...statsArray].slice(0, temp).concat([...statsArray].slice(temp+1))
         setSelectedOption(e)
         setStatsArray(newArray)
     }
