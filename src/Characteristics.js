@@ -1,19 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Category from './Category'
+import {options, statNames} from './Constants'
 
 export default function Characteristics() {
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+    const [statsArray, setStatsArray] = useState([...options])
+    function handleChange(e) {
+        let temp = [...options].indexOf(e)
+        let newArray = [...options].slice(0, temp).concat([...options].slice(temp+1))
+        setSelectedOption(e)
+        setStatsArray(newArray)
+    }
+    const stats = statNames.map(item => (
+        <Category handleSelect={handleChange}
+                          defaultValue={selectedOption}
+                          options={statsArray} 
+                          name={item}  />
+    ))
     return (
         <div className='Investigator, Investigator--Characteristics'>
             <h2 className='Text--Outline'>Characteristics</h2>
             <div className='Investigator--Info'>
-                <Category name="Strength"  />
-                <Category name="Dexterity"  />
-                <Category name="Constitution" />
-                <Category name="Intelligence" />
-                <Category name="Appearance" />
-                <Category name="Size" />
-                <Category name="Education" />
-                <Category name="Power" />
+                {stats}
             </div>
         </div>
     )

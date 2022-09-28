@@ -1,4 +1,15 @@
 
+export const statNames = [
+    "Strength",
+    "Dexterity",
+    "Constitution",
+    "Intelligence",
+    "Appearance",
+    "Size",
+    "Education",
+    "Power"
+]
+
 export const options = [
     {label:"Select..."},
     {label:"40"},
