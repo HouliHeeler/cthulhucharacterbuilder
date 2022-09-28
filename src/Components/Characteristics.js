@@ -5,21 +5,18 @@ import {options, statNames} from '../Constants'
 export default function Characteristics() {
     const [selectedOption, setSelectedOption] = useState(options[0]);
     const [statsArray, setStatsArray] = useState([...options])
-    const [strength, setStrength] = useState(null)
-    const [chosenArray, setChosenArray] = useState([])
     function handleChange(e) {
-        setStrength(e.label)
-        setChosenArray(strength)
         let temp = [...statsArray].indexOf(e)
         let newArray = [...statsArray].slice(0, temp).concat([...statsArray].slice(temp+1))
-        setSelectedOption(chosenArray)
+        setSelectedOption(e)
         setStatsArray(newArray)
     }
     const stats = statNames.map(item => (
         <Category handleSelect={handleChange}
                   defaultValue={selectedOption}
                   options={statsArray}
-                  id={item} 
+                  id={item}
+                  key={item} 
                   name={item}  />
     ))
     return (

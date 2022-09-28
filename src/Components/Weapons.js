@@ -3,7 +3,7 @@ import { weaponArray } from '../Constants'
 
 export default function Weapons() {
     const column = weaponArray.map(item => (
-    <div className='Weapons--Column'>
+    <div key={item} className='Weapons--Column'>
         <div>{item}</div>
         <input className='Weapons--Input'></input>
         <input className='Weapons--Input'></input>

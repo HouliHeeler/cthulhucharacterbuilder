@@ -3,7 +3,7 @@ import { combatInfo } from '../Constants'
 
 export default function Combat() {
     const combatTable = combatInfo.map(item => (
-        <div className='Combat--Row'>
+        <div key={item} className='Combat--Row'>
             <div>{item}</div>
             <span className='Combat--Input'></span>
         </div>

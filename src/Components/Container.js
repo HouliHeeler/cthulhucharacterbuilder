@@ -3,7 +3,7 @@ import { SourceBox } from './SourceBox.js'
 import { StatefulTargetBox as TargetBox } from './TargetBox.js'
 import {skills} from '../Constants'
 export const Container = memo(function Container() {
-  const skillsArray = skills.map(skill => <TargetBox name={skill.name} default={skill.score} className="Target--Box"/>)
+  const skillsArray = skills.map((skill, i) => <TargetBox name={skill.name} key={i} default={skill.score} className="Target--Box"/>)
   return (
     <div>
       <div className="Prof--Skills">
