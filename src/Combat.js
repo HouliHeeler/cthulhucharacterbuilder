@@ -5,9 +5,10 @@ export default function Combat() {
     const combatTable = combatInfo.map(item => (
         <div className='Combat--Row'>
             <div>{item}</div>
-            <input className='Combat--Input'></input>
+            <span className='Combat--Input'></span>
         </div>
     ))
+
     return (
         <div>
             <h2 className='Text--Outline'>Combat</h2>

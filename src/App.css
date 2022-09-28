@@ -128,5 +128,9 @@ html {
 
 .Combat--Input {
   width: 3rem;
+  height: 1rem;
+  background-color: aliceblue;
+  border: 1px solid aliceblue;
+  color: black;
   margin-left: 2rem;
 }

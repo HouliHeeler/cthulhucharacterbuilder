@@ -1,4 +1,16 @@
 
+export const options = [
+    {label:"Select..."},
+    {label:"40"},
+    {label:"50"},
+    {label:"50"},
+    {label:"50"},
+    {label:"60"},
+    {label:"60"},
+    {label:"70"},
+    {label:"80"},
+]
+
 export const skills = [
     {name: "Accounting",
      score: 5},

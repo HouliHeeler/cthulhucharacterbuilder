@@ -1,23 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Select from 'react-select'
+import {options} from './Constants'
 
 export default function Category(props) {
-    const options = [
-        {value:"1", label:"40"},
-        {value:"2", label:"50"},
-        {value:"3", label:"50"},
-        {value:"4", label:"50"},
-        {value:"5", label:"60"},
-        {value:"6", label:"60"},
-        {value:"7", label:"70"},
-        {value:"8", label:"80"},
-    ]
-
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+    const [statsArray, setStatsArray] = useState([...options])
+    function handleChange(e) {
+        let temp = [...options].indexOf(e)
+        let newArray = [...options].slice(0, temp).concat([...options].slice(temp+1))
+        setSelectedOption(e)
+        setStatsArray(newArray)
+    }
     return (
         <div className='Info--Span'>
             <span>{props.name}</span>
-            <Select options={options}
-                    isClearable={true}
+            <Select 
+                    defaultValue={selectedOption}
+                    onChange={handleChange}
+                    options={statsArray}
                     className="Category--Options"/>
         </div>
     )
