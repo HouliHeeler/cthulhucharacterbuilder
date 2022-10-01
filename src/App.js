@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
 import Characteristics from './Components/Characteristics';
 import Header from './Components/Header'
 import Investigator from './Components/Investigator';
@@ -12,7 +12,7 @@ import Combat from './Components/Combat';
 function App() {
   return (
     <div className="App">
-      <Navbar className="Navbar"/>
+      {/* <Navbar className="Navbar"/> */}
       <Header />
       <div className='Profile'>
         <Investigator />
