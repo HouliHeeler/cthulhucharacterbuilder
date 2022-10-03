@@ -1,29 +1,68 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Category from './Category'
-import {options, statNames} from '../Constants'
 
-export default function Characteristics() {
-    const [selectedOption, setSelectedOption] = useState(options[0]);
-    const [statsArray, setStatsArray] = useState([...options])
-    function handleChange(e) {
-        let temp = [...statsArray].indexOf(e)
-        let newArray = [...statsArray].slice(0, temp).concat([...statsArray].slice(temp+1))
-        setSelectedOption(e)
-        setStatsArray(newArray)
-    }
-    const stats = statNames.map(item => (
-        <Category handleSelect={handleChange}
-                  defaultValue={selectedOption}
-                  options={statsArray}
-                  id={item}
-                  key={item} 
-                  name={item}  />
-    ))
+
+export default function Characteristics(props) {
     return (
         <div className='Investigator, Investigator--Characteristics'>
             <h2 className='Text--Outline'>Characteristics</h2>
             <div className='Investigator--Info'>
-                {stats}
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='strength'
+                    key='strength'
+                    name='strength'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='dexterity'
+                    key='dexterity'
+                    name='dexterity'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='consitution'
+                    key='consitution'
+                    name='consitution'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='intelligence'
+                    key='intelligence'
+                    name='intelligence'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='appearance'
+                    key='appearance'
+                    name='appearance'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='size'
+                    key='size'
+                    name='size'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='education'
+                    key='education'
+                    name='education'    />
+                <Category 
+                    handleSelect={props.handleChange}
+                    defaultValue={props.selectedOption}
+                    options={props.statsArray}
+                    id='power'
+                    key='power'
+                    name='power'    />
             </div>
         </div>
     )
