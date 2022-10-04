@@ -36,6 +36,23 @@ function App() {
       console.log(chosenStats)
       setStatsArray(newArray)
   }
+
+//Formula for replacing array with unchosen stats
+
+// let array = [40, 50, 50, 50, 60, 60, 70, 80]
+// let selectedArray = [40, 50, 60, 60]
+// let newArray = []
+// let temp;
+
+// for(i=0;i<array.length;i++) {
+// 	if(selectedArray.includes(array[i])) {
+//    	temp = selectedArray.indexOf(array[i])
+//    	selectedArray = selectedArray.slice(0, temp).concat(selectedArray.slice(temp+1))
+//   }else {
+//    	newArray.push(array[i])
+//   }
+// }
+// console.log(newArray)
     
   return (
     <div className="App">
