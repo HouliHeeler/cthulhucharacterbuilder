@@ -12,48 +12,27 @@ import {options} from './Constants'
 import { useState } from 'react';
 
 function App() {
-  const [strength, setStrength] = useState(null)
-  const [dexterity, setDexterity] = useState(null)
-  const [constitution, setConstitution] = useState(null)
-  const [intelligence, setIntelligence] = useState(null)
-  const [appearance, setAppearance] = useState(null)
-  const [size, setSize] = useState(null)
-  const [education, setEducation] = useState(null)
-  const [power, setPower] = useState(null)
-  const [chosenStats, setChosenStats] = useState([])
+  const [chosenStats, setChosenStats] = useState(
+    {
+      Strength: null,
+      Dexterity: null,
+      Constitution: null,
+      Intelligence: null,
+      Appearance: null,
+      Size: null,
+      Education: null,
+      Power: null,
+    })
   const [statsArray, setStatsArray] = useState([...options])
   function handleChange(e, id) {
       let temp = [...statsArray].indexOf(e)
       let newArray = [...statsArray].slice(0, temp).concat([...statsArray].slice(temp+1))
-      switch(id.name) {
-        case "Strength":
-          setStrength(e.label);
-          break;
-        case "Dexterity":
-          setDexterity(e.label);
-          break;
-        case "Constitution":
-          setConstitution(e.label);
-          break;
-        case "Intelligence":
-          setIntelligence(e.label);
-          break;
-        case "Appearance":
-          setAppearance(e.label);
-          break;
-        case "Size":
-          setSize(e.label);
-          break;
-        case "Education":
-          setEducation(e.label);
-          break;
-        case "Power":
-          setPower(e.label); 
-          break; 
-        default:
-          break;
-      }
-      setChosenStats([strength, dexterity, constitution, intelligence, appearance, size, education, power])
+      setChosenStats(prevStats => {
+        return {
+          ...prevStats,
+          [id.name]:e.label
+        }
+      })
       console.log(chosenStats)
       setStatsArray(newArray)
   }
