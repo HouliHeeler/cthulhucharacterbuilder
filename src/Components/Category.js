@@ -6,7 +6,7 @@ export default function Category(props) {
         <div className='Info--Span'>
             <span>{props.name}</span>
             <Select 
-                    name={props.name}
+                    name={props.statName}
                     defaultValue={props.defaultValue}
                     onChange={props.handleSelect}
                     options={props.options}

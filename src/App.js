@@ -54,7 +54,7 @@ function App() {
 			</div>
       <div className='Weapons--Combat'>
         <Weapons />
-        <Combat />
+        <Combat stats={chosenStats}/>
       </div>
     </div>
   );

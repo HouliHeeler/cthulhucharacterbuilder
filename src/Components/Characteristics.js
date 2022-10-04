@@ -9,8 +9,9 @@ export default function Characteristics(props) {
         handleSelect={props.handleChange}
         defaultValue={props.selectedOption}
         options={props.statsArray}
+        statName={item}
         key={item}
-        name={item}    
+        name={item} 
         />
     )
     return (
