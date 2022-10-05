@@ -69,6 +69,14 @@ input {
   max-height: 2.5rem;
 }
 
+.LifeStats--Table {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: aliceblue;
+  margin: 2rem 1rem;
+}
+
 .Prof--Skills, .Pers--Skills {
   display: flex;
   justify-content: space-evenly;
@@ -134,19 +142,21 @@ input {
   flex-direction: column;
 }
 
-.Combat--Row {
+.Combat--Row, .LifeStats--Row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: .9rem 0;
 }
 
-.Combat--Input {
+.Combat--Input, .LifeStats--Input {
   width: 2rem;
   height: 1rem;
+  text-align: center;
   background-color: aliceblue;
   border: 1px solid aliceblue;
   color: black;
-  margin-left: 2rem;
+  margin-left: .5rem;
 }
   
 @media screen and (max-width: 800px) {
@@ -159,6 +169,11 @@ input {
   }
   .Investigator--Info {
     max-height: none;
+  }
+  .LifeStats--Row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .Skills--Array {
     max-width: 100vw;

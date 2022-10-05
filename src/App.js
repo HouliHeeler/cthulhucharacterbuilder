@@ -10,6 +10,7 @@ import Weapons from './Components/Weapons';
 import Combat from './Components/Combat';
 import {options} from './Constants'
 import { useState } from 'react';
+import LifeStats from './Components/LifeStats';
 
 function App() {
   const [chosenStats, setChosenStats] = useState(
@@ -24,35 +25,18 @@ function App() {
       Power: null,
     })
   const [statsArray, setStatsArray] = useState([...options])
+  
   function handleChange(e, id) {
-      let temp = [...statsArray].indexOf(e)
-      let newArray = [...statsArray].slice(0, temp).concat([...statsArray].slice(temp+1))
       setChosenStats(prevStats => {
         return {
           ...prevStats,
           [id.name]:e.label
         }
       })
-      console.log(chosenStats)
+      let selected = Object.values(chosenStats).filter(item => item !== null && item !== 'Select...')
+      let newArray = [...options].filter(item => !selected.includes(item.label))
       setStatsArray(newArray)
   }
-
-//Formula for replacing array with unchosen stats
-
-// let array = [40, 50, 50, 50, 60, 60, 70, 80]
-// let selectedArray = [40, 50, 60, 60]
-// let newArray = []
-// let temp;
-
-// for(i=0;i<array.length;i++) {
-// 	if(selectedArray.includes(array[i])) {
-//    	temp = selectedArray.indexOf(array[i])
-//    	selectedArray = selectedArray.slice(0, temp).concat(selectedArray.slice(temp+1))
-//   }else {
-//    	newArray.push(array[i])
-//   }
-// }
-// console.log(newArray)
     
   return (
     <div className="App">
@@ -62,8 +46,10 @@ function App() {
         <Investigator />
         <Characteristics 
           statsArray={statsArray}
-          handleChange={handleChange}                />
+          handleChange={handleChange}
+        />
       </div>
+      <LifeStats stats={chosenStats}/>
       <div className="Prof--Skills">
 				<DndProvider backend={HTML5Backend}>
 					<Container />

@@ -12,13 +12,13 @@ export const statNames = [
 
 export const options = [
     {label:"Select..."},
-    {label:"40"},
+    {label:"45"},
     {label:"50"},
-    {label:"50"},
-    {label:"50"},
+    {label:"55"},
     {label:"60"},
-    {label:"60"},
+    {label:"65"},
     {label:"70"},
+    {label:"75"},
     {label:"80"},
 ]
 
