@@ -1,6 +1,6 @@
 import './App.css';
-// import Navbar from './Components/Navbar';
 import Characteristics from './Components/Characteristics';
+import NavBar from './Components/NavBar';
 import Header from './Components/Header'
 import Investigator from './Components/Investigator';
 import Container from './Components/Container'
@@ -34,15 +34,14 @@ function App() {
         }
       })
       let selected = Object.values(chosenStats).filter(item => item !== null && item !== 'Select...')
-      let newArray = [...options].filter(item => !selected.includes(item.label))
-      setStatsArray(newArray)
+      setStatsArray([...options].filter(item => !selected.includes(item.label)))
   }
-    
+  
   return (
     <div className="App">
-      {/* <Navbar className="Navbar"/> */}
+      <NavBar />
       <Header />
-      <div className='Profile'>
+      <div className="Profile">
         <Investigator />
         <Characteristics 
           statsArray={statsArray}

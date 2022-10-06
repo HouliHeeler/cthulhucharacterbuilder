@@ -6,7 +6,7 @@ import { faDice } from '@fortawesome/free-solid-svg-icons'
 export default function LifeStats(props) {
     const element = <FontAwesomeIcon icon={faDice} className='Dice' onClick={rollLuck}/>
     const {Size, Power, Constitution, Dexterity, Strength} = props.stats
-    const hitPoints = (Number(Constitution) + Number(Size))/10
+    const hitPoints = Math.floor((Number(Constitution) + Number(Size))/10)
     let moveRate;
     if(Dexterity && Strength >= Size) {
         moveRate = "9"

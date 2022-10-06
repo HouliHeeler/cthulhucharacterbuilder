@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Combat(props) {
     const {Strength, Dexterity, Size} = props.stats
-    const dodge = Dexterity/2
+    const dodge = Math.floor(Dexterity/2)
     let build
     let damageBonus
     if(Number(Strength) + Number(Size) >= 165) {

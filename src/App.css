@@ -19,6 +19,11 @@ ul {
   text-align: center;
 }
 
+.Printer {
+  color: aliceblue;
+  padding: 10px;
+}
+
 .Header {
   display: flex;
   font-size: 3rem;
@@ -197,5 +202,18 @@ input {
 @media screen and (max-width: 600px) {
   body {
     font-size: 12px;
+  }
+}
+
+@media print {
+  .NavBar, .Dice, .Printer {
+    display: none;
+  }
+  .Investigator--Info {
+    height: 17vh;
+  }
+  @page {
+    size: auto;
+    margin: 0;
   }
 }
