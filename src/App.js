@@ -25,7 +25,7 @@ function App() {
       Power: null,
     })
   const [statsArray, setStatsArray] = useState([...options])
-  
+
   function handleChange(e, id) {
       setChosenStats(prevStats => {
         return {

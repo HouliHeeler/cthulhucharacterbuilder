@@ -1,6 +1,10 @@
 import React, { useState }  from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDice } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function LifeStats(props) {
+    const element = <FontAwesomeIcon icon={faDice} className='Dice' onClick={rollLuck}/>
     const {Size, Power, Constitution, Dexterity, Strength} = props.stats
     const hitPoints = (Number(Constitution) + Number(Size))/10
     let moveRate;
@@ -36,7 +40,7 @@ export default function LifeStats(props) {
                 <div className='LifeStats--Row'>
                     <div>Luck</div>
                     <span className='LifeStats--Input'>{luck}</span>
-                    <button onClick={rollLuck}>Roll Me</button>
+                    {element}
                 </div>
                 <div className='LifeStats--Row'>
                     <div>Magic Points</div>
