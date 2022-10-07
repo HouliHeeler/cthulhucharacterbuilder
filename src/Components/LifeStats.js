@@ -4,10 +4,13 @@ import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function LifeStats(props) {
-    const element = <FontAwesomeIcon icon={faDice} className='Dice' onClick={rollLuck}/>
+    
     const {Size, Power, Constitution, Dexterity, Strength} = props.stats
     const hitPoints = Math.floor((Number(Constitution) + Number(Size))/10)
     let moveRate;
+    const [dieRolled, setDieRolled] = useState(false)
+    const noMoreRolls = {color:"red"}
+    const element = <FontAwesomeIcon icon={faDice} style={dieRolled && noMoreRolls} className='Dice' onClick={!dieRolled && rollLuck}/>
     if(Dexterity && Strength >= Size) {
         moveRate = "9"
     }else if(Size > Dexterity && Strength) {
@@ -24,6 +27,7 @@ export default function LifeStats(props) {
     
     function rollLuck() {
         setLuck((rollOne + rollTwo + rollThree) * 5)
+        setDieRolled(true)
     }
 
     return (
