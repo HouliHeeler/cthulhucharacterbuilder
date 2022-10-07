@@ -4,6 +4,7 @@ import { useDrag } from 'react-dnd'
 export const SourceBox = memo(function SourceBox(props) {
   const [{ isDragging }, drag] = useDrag(
     () => ({
+      //Sets type property of draggable item, to be checked by droppable box to ensure acceptance
       type: props.name,
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),

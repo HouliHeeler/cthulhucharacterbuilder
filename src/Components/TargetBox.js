@@ -4,6 +4,7 @@ import { useDrop } from 'react-dnd'
 const TargetBox = memo(function TargetBox({ onDrop, lastDroppedStat }) {
   const [{ isOver, canDrop }, drop] = useDrop(
     () => ({
+      //Ratifies the type of draggable item against accepted types. Will only allow matches to be dropped
       accept: ["20", "40", "50", "60", "70"],
       drop(_item, monitor) {
         onDrop(monitor.getItemType())
@@ -32,6 +33,7 @@ const TargetBox = memo(function TargetBox({ onDrop, lastDroppedStat }) {
 })
 export const StatefulTargetBox = (props) => {
   const [lastDroppedStat, setLastDroppedStat] = useState(props.default)
+  //Pulls the stat from the draggable item and uses it to set lastDroppedStat, which is applied to the target box as a chosen character stat
   const handleDrop = useCallback((stat) => setLastDroppedStat(stat), [])
   return (
     <div className="Skill">

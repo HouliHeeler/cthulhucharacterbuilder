@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Combat(props) {
+    //Destructure chosenStats array from App.js into stats that will calculate Dodge, Build, and Damage Bonus numbers
     const {Strength, Dexterity, Size} = props.stats
     const dodge = Math.floor(Dexterity/2)
     let build

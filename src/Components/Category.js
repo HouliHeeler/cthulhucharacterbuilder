@@ -9,6 +9,7 @@ export default function Category(props) {
                     name={props.statName}
                     defaultValue={props.defaultValue}
                     onChange={props.handleSelect}
+                    //Provides the options in the dropdown menu. Fed through props from App.js to Characteristics.js to here
                     options={props.options}
                     className="Category--Options"/>
         </div>

@@ -4,6 +4,7 @@ import { statNames } from '../Constants'
 
 
 export default function Characteristics(props) {
+    //Creates dropdown menus for each item in the statNames array imported from Constants.js
     const statSelector = statNames.map(item => 
     <Category 
         handleSelect={props.handleChange}

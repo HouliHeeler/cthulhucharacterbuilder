@@ -13,6 +13,7 @@ import { useState } from 'react';
 import LifeStats from './Components/LifeStats';
 
 function App() {
+  //Builds an array of chosen stats from the dropdown menus, adjusts the options available in the dropdown menus by reflecting the changes with setStatsArray. Both are adjusted in the handleChange function.
   const [chosenStats, setChosenStats] = useState(
     {
       Strength: null,

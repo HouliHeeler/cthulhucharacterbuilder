@@ -3,7 +3,9 @@ import { SourceBox } from './SourceBox.js'
 import { StatefulTargetBox as TargetBox } from './TargetBox.js'
 import {skills} from '../Constants'
 export const Container = memo(function Container() {
+  //Builds out Droppable Target Boxes from skillsArray imported from Constants.js
   const skillsArray = skills.map((skill, i) => <TargetBox name={skill.name} key={i} default={skill.score} className="Target--Box"/>)
+  //Creates all of the Draggable Source Boxes
   return (
     <div>
       <div className="Prof--Skills">

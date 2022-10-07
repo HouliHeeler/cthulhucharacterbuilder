@@ -4,13 +4,10 @@ import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function LifeStats(props) {
-    
+    //Destructure stats from chosenArray sent as props through App.js. The stats are then used to calculate Hit Points, Magic Points, Move Rate, and Sanity
     const {Size, Power, Constitution, Dexterity, Strength} = props.stats
     const hitPoints = Math.floor((Number(Constitution) + Number(Size))/10)
     let moveRate;
-    const [dieRolled, setDieRolled] = useState(false)
-    const noMoreRolls = {color:"red"}
-    const element = <FontAwesomeIcon icon={faDice} style={dieRolled && noMoreRolls} className='Dice' onClick={!dieRolled && rollLuck}/>
     if(Dexterity && Strength >= Size) {
         moveRate = "9"
     }else if(Size > Dexterity && Strength) {
@@ -20,6 +17,11 @@ export default function LifeStats(props) {
     }
     const sanity = Power
     const magicPoints = Power/5
+    //Sets stat for truthiness of dieRolled. Then uses conditional rendering to change color of die icon to red, and unmount the onClick function after the first roll
+    const [dieRolled, setDieRolled] = useState(false)
+    const noMoreRolls = {color:"red"}
+    const element = <FontAwesomeIcon icon={faDice} style={dieRolled && noMoreRolls} className='Dice' onClick={!dieRolled && rollLuck}/>
+    //Roll Luck function creates three d6 rolls and multiplies the result by five to obtain the characters Luck score
     const rollOne = Math.ceil(Math.random() * 6)
     const rollTwo = Math.ceil(Math.random() * 6)
     const rollThree = Math.ceil(Math.random() * 6)
