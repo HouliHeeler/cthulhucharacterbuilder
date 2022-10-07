@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ba85ff25.css",
+    "main.js": "/static/js/main.2a85713a.js",
+    "static/js/787.6a4d5785.chunk.js": "/static/js/787.6a4d5785.chunk.js",
+    "static/media/cthulhu.jpg": "/static/media/cthulhu.f4934072e279e12e6e07.jpg",
+    "index.html": "/index.html",
+    "main.ba85ff25.css.map": "/static/css/main.ba85ff25.css.map",
+    "main.2a85713a.js.map": "/static/js/main.2a85713a.js.map",
+    "787.6a4d5785.chunk.js.map": "/static/js/787.6a4d5785.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba85ff25.css",
+    "static/js/main.2a85713a.js"
+  ]
+}
